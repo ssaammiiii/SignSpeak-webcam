@@ -1,0 +1,27 @@
+[project]
+name = "signspeak"
+version = "0.2.0"
+description = "Unified ASL fingerspelling system: MediaPipe-based training + real-time recognition feeding AI sentence translation and speech."
+readme = "README.md"
+# Intersection of the two source projects. mediapipe 0.10.35 ships py3-none
+# wheels that run on 3.13 (see original Sign_ASL README); signspeak's LLM
+# stack needs >=3.13.
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    # recognition & training (from Sign_ASL)
+    "mediapipe>=0.10.30",
+    "opencv-python>=4.9",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "joblib>=1.3",
+    # sentence generation & speech (from sign_speak)
+    "google-genai",
+    "wordninja",
+    "pyttsx3",
+    "python-dotenv",
+]
+
+# Scripts-based project, not an installable package: uv only manages the env.
+[tool.uv]
+package = false

@@ -1,0 +1,17 @@
+# secrets — never commit your real key
+.environment
+.env
+
+
+# uv / virtual environment
+.venv/
+
+# python build artifacts
+__pycache__/
+*.pyc
+# trained models and datasets are local artifacts
+models/*.joblib
+models/*.task
+data/*.csv
+data/word_raw/
+data/onehand_raw/
